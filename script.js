@@ -11,6 +11,9 @@ const logoImgEl = document.getElementById("logo-img");
 const logoUploadEl = document.getElementById("logo-upload-img");
 let color = "Blue";
 
+// checking whether the user uploaded a logo or not
+let checkImg = false;
+
 // color object to get the color styling right
 const colorObj = {
   Blue: "#e3f5fb",
@@ -55,7 +58,11 @@ function changeProductImage(val) {
     productImgEl.src = `./images/umbrella-images/${val}umbrella.png`;
     productImgEl.style.display = "block";
     uploadIconEl.style.display = "block";
-    logoUploadEl.style.display = "inline-block";
+
+    // checking if user uploaded a image or not
+    if (checkImg) {
+      logoUploadEl.style.display = "inline-block";
+    }
   }, 2500);
   containerEl.style.backgroundColor = `${colorObj[val]}`;
 }
@@ -79,6 +86,7 @@ logoImgEl.addEventListener("change", function (event) {
   if (event.target.files[0].size > 5242880) {
     alert("File is too big! The limit is 5MB");
   } else {
+    checkImg = true;
     productImgEl.style.display = "none";
     uploadIconEl.style.display = "none";
     loaderStyle(true, color);
