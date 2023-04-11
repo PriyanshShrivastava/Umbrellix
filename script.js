@@ -1,6 +1,9 @@
 const productImgEl = document.getElementById("product-img");
 const containerEl = document.getElementById("container");
 const loaderEl = document.getElementById("loader");
+const uploadLoderEl = document.getElementById("upload-loader");
+const uploadIconEl = document.getElementById("upload-icon");
+const uploadLabelEl = document.getElementById("upload-label");
 
 // grabbing color
 
@@ -28,6 +31,7 @@ function changeProductImage(val) {
   }
 
   productImgEl.style.display = "none";
+  uploadIconEl.style.display = "none";
 
   loaderStyle(true, val);
 
@@ -43,6 +47,7 @@ function changeProductImage(val) {
     loaderStyle(false);
     productImgEl.src = `./images/umbrella-images/${val}umbrella.png`;
     productImgEl.style.display = "block";
+    uploadIconEl.style.display = "block";
   }, 3000);
   containerEl.style.backgroundColor = `${colorObj[val]}`;
 
@@ -52,8 +57,11 @@ function changeProductImage(val) {
 function loaderStyle(val, col = "#fff") {
   if (val) {
     loaderEl.style.display = "block";
+    uploadLabelEl.style.backgroundColor = `${colorObj[col + "loader"]}`;
     loaderEl.setAttribute("fill", `${colorObj[col + "loader"]}`);
+    uploadLoderEl.style.display = "block";
   } else {
     loaderEl.style.display = "none";
+    uploadLoderEl.style.display = "none";
   }
 }

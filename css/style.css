@@ -24,6 +24,12 @@ body {
   background-color: #f7f7f7;
 }
 
+/* making the upload svg color white  */
+.uplaod-desc img {
+  filter: invert(100%) sepia(0%) saturate(7491%) hue-rotate(324deg)
+    brightness(106%) contrast(100%);
+}
+
 /* Main Container styling  */
 #container {
   padding: 5rem;
@@ -47,6 +53,12 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+/* title style 
+ */
+.product-title {
+  font-size: 3rem;
+}
 .img-container #product-img {
   width: 100%;
   transition: all 0.1s;
@@ -57,6 +69,14 @@ input {
 
 /* loader svg  */
 #loader {
+  display: none;
+  transition: all 0.1s;
+  animation: rotate 1s linear infinite;
+}
+
+/* uplaod loader stying  */
+
+#upload-loader {
   display: none;
   transition: all 0.1s;
   animation: rotate 1s linear infinite;
@@ -79,6 +99,7 @@ input {
   gap: 2rem;
   border-radius: 5px;
   border: none;
+  justify-content: center;
 }
 
 /* label styling  */
@@ -92,6 +113,7 @@ label#upload-label {
   border: none;
   background-color: #14aae2;
   color: white;
+  width: 60%;
 }
 /* label title styling */
 .file-head {
@@ -139,77 +161,3 @@ label#upload-label {
   cursor: pointer;
   transition: all 0.3s;
 }
-
-.uplaod-desc img {
-  filter: invert(100%) sepia(0%) saturate(7491%) hue-rotate(324deg)
-    brightness(106%) contrast(100%);
-}
-
-/* Styling for radio buttons */
-/* input[type="radio"] {
-  display: none;
-}
-
-/* Styling for radio button label */
-/* label.radio {
-  display: inline-block;
-  padding: 10px;
-  margin: 10px;
-  border: 2px solid #ccc;
-  border-radius: 50%;
-  text-align: center;
-  cursor: pointer;
-  position: relative;
-} */
-
-/* Styling for radio button label in blue color */
-/* .Blue {
-  position: absolute;
-  border-color: blue;
-  background-color: #d9edf7;
-  color: blue;
-  width: 100%;
-  height: 100%;
-  bottom: 0;
-  right: 0;
-  top: 0;
-  left: 0;
-  border-radius: 10px;
-} */
-
-/* Styling for radio button label in pink color */
-/* .Pink {
-  border-color: pink;
-  background-color: #f8d7da;
-  color: pink;
-  width: 100%;
-  height: 100%;
-  bottom: 0;
-  right: 0;
-  top: 0;
-  left: 0;
-  border-radius: 10px;
-  position: absolute;
-} */
-
-/* Styling for radio button label in yellow color */
-/* .Yello {
-  border-color: yellow;
-  background-color: #fff3cd;
-  color: yellow;
-  width: 100%;
-  height: 100%;
-  bottom: 0;
-  right: 0;
-  top: 0;
-  left: 0;
-  border-radius: 10px;
-  position: absolute;
-} */
-
-/* Styling for selected radio button label */
-/* input[type="radio"]:checked + label {
-  border-color: black;
-  background-color: white;
-  color: black;
-}  */
