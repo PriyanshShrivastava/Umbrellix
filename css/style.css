@@ -15,6 +15,8 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
+/* body styling  */
+
 body {
   font-family: "Poppins", sans-serif;
   display: flex;
@@ -25,7 +27,7 @@ body {
 }
 
 /* making the upload svg color white  */
-.uplaod-desc img {
+.upload-desc img {
   filter: invert(100%) sepia(0%) saturate(7491%) hue-rotate(324deg)
     brightness(106%) contrast(100%);
 }
@@ -64,8 +66,7 @@ body {
   height: 20px;
 }
 
-/* title style 
- */
+/* title style  */
 .product-title {
   font-size: 3rem;
 }
@@ -86,7 +87,7 @@ input {
   animation: rotate 1s linear infinite;
 }
 
-/* uplaod loader stying  */
+/* upload loader stying  */
 
 #upload-loader {
   display: none;
@@ -130,6 +131,7 @@ label#upload-label {
   transition: all 0.3s;
 }
 
+/* hover effect in label  */
 label#upload-label:hover {
   opacity: 0.8;
 }
@@ -141,7 +143,7 @@ label#upload-label:hover {
 }
 
 /* upload descriotion styling  */
-.uplaod-desc {
+.upload-desc {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -154,6 +156,7 @@ label#upload-label:hover {
   flex-direction: row;
   gap: 15px;
 }
+/* styling all the color spans  */
 
 #Blue {
   width: 40px;
@@ -200,6 +203,9 @@ label#upload-label:hover {
   label#upload-label {
     width: 100%;
   }
+
+  /* image uploaded by user  */
+
   #logo-upload-img {
     display: none;
     position: absolute;
@@ -208,6 +214,8 @@ label#upload-label:hover {
     height: 20px;
   }
 }
+
+/* Media queries  */
 
 @media only screen and (max-width: 750px) {
   .product-title {

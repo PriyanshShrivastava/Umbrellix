@@ -1,3 +1,5 @@
+// grabbing all the required elements
+
 const productImgEl = document.getElementById("product-img");
 const containerEl = document.getElementById("container");
 const loaderEl = document.getElementById("loader");
@@ -9,12 +11,7 @@ const logoImgEl = document.getElementById("logo-img");
 const logoUploadEl = document.getElementById("logo-upload-img");
 let color = "Blue";
 
-// grabbing color
-
-// const blueColEl = document.getElementById("Blue");
-// const pinkColEl = document.getElementById("Pink");
-// const yellowColEl = document.getElementById("Yellow");
-
+// color object to get the color styling right
 const colorObj = {
   Blue: "#e3f5fb",
   Pink: "#fdf1f7",
@@ -27,9 +24,12 @@ const colorObj = {
   Yellowloader: "#ffcc3c",
 };
 
+// change Product image function triggers when user click on change color
 function changeProductImage(val) {
   color = val;
   clearTimeout(newTimeout);
+
+  //   removing border from every color spans
   const spanId = document.querySelectorAll("span");
   for (let i = 0; i < spanId.length; i++) {
     spanId[i].style.border = "none";
@@ -41,6 +41,7 @@ function changeProductImage(val) {
 
   loaderStyle(true, val);
 
+  //   setting border to the clicked color span
   if (val == "Blue") {
     document.getElementById(val).style.border = `${colorObj.Blueborder}`;
   } else if (val == "Pink") {
@@ -57,10 +58,9 @@ function changeProductImage(val) {
     logoUploadEl.style.display = "inline-block";
   }, 2500);
   containerEl.style.backgroundColor = `${colorObj[val]}`;
-
-  //   document.getElementById("product-img").src = selectedColor + "-image.jpg";
 }
 
+// loader styling function
 function loaderStyle(val, col = "#fff") {
   if (val) {
     loaderEl.style.display = "block";
