@@ -25,18 +25,191 @@ body {
 }
 
 /* Main Container styling  */
-.container {
+#container {
   padding: 5rem;
   border: none;
   border-radius: 15px;
-  background-color: white;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  background-color: #e3f5fb;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.095),
+    -2px -2px 15px rgba(0, 0, 0, 0.095);
   display: flex;
   flex-direction: row;
-  gap: 10px;
-  width: 60%;
+  gap: 5rem;
+  width: 80%;
+  height: 80vh;
+  align-items: stretch;
+}
+/* image container styling  */
+.img-container {
+  width: 80%;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img-container #product-img {
+  width: 100%;
+  transition: all 0.1s;
+}
+input {
+  display: none;
 }
 
+/* loader svg  */
+#loader {
+  display: none;
+  transition: all 0.1s;
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Description styling  */
 .desc-container {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-radius: 5px;
+  border: none;
 }
+
+/* label styling  */
+label#upload-label {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  background-color: #14aae2;
+  color: white;
+}
+/* label title styling */
+.file-head {
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* upload descriotion styling  */
+.uplaod-desc {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* color panel  */
+
+.color-panel {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+#Blue {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #0095e4;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+#Pink {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e11a72;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+#Yellow {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ffcc3c;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.uplaod-desc img {
+  filter: invert(100%) sepia(0%) saturate(7491%) hue-rotate(324deg)
+    brightness(106%) contrast(100%);
+}
+
+/* Styling for radio buttons */
+/* input[type="radio"] {
+  display: none;
+}
+
+/* Styling for radio button label */
+/* label.radio {
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+} */
+
+/* Styling for radio button label in blue color */
+/* .Blue {
+  position: absolute;
+  border-color: blue;
+  background-color: #d9edf7;
+  color: blue;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+} */
+
+/* Styling for radio button label in pink color */
+/* .Pink {
+  border-color: pink;
+  background-color: #f8d7da;
+  color: pink;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  position: absolute;
+} */
+
+/* Styling for radio button label in yellow color */
+/* .Yello {
+  border-color: yellow;
+  background-color: #fff3cd;
+  color: yellow;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  position: absolute;
+} */
+
+/* Styling for selected radio button label */
+/* input[type="radio"]:checked + label {
+  border-color: black;
+  background-color: white;
+  color: black;
+}  */
