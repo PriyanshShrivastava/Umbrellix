@@ -76,19 +76,23 @@ function loaderStyle(val, col = "#fff") {
 // Upload Img Event
 
 logoImgEl.addEventListener("change", function (event) {
-  productImgEl.style.display = "none";
-  uploadIconEl.style.display = "none";
-  loaderStyle(true, color);
-  setTimeout(() => {
-    loaderStyle(false);
-    let inputImage = document.querySelector("input[type=file]").files[0];
-    uploadTitleEl.innerText = inputImage.name.substring(0, 30);
-    logoUploadEl.src = URL.createObjectURL(event.target.files[0]);
-    productImgEl.style.display = "block";
-    uploadIconEl.style.display = "block";
-    logoUploadEl.style.display = "inline-block";
-  }, 2500);
-  logoUploadEl.onload = function () {
-    URL.revokeObjectURL(logoUploadEl.src);
-  };
+  if (event.target.files[0].size > 5242880) {
+    alert("File is too big! The limit is 5MB");
+  } else {
+    productImgEl.style.display = "none";
+    uploadIconEl.style.display = "none";
+    loaderStyle(true, color);
+    setTimeout(() => {
+      loaderStyle(false);
+      let inputImage = document.querySelector("input[type=file]").files[0];
+      uploadTitleEl.innerText = inputImage.name.substring(0, 30);
+      logoUploadEl.src = URL.createObjectURL(event.target.files[0]);
+      productImgEl.style.display = "block";
+      uploadIconEl.style.display = "block";
+      logoUploadEl.style.display = "inline-block";
+    }, 2500);
+    logoUploadEl.onload = function () {
+      URL.revokeObjectURL(logoUploadEl.src);
+    };
+  }
 });
