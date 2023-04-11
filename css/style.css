@@ -20,7 +20,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #f7f7f7;
 }
 
@@ -42,16 +42,26 @@ body {
   flex-direction: row;
   gap: 5rem;
   width: 80%;
-  height: 80vh;
+  min-height: 80vh;
   align-items: stretch;
 }
 /* image container styling  */
 .img-container {
   width: 80%;
-  padding: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+
+/* Logo image uploaded by user  */
+
+#logo-upload-img {
+  display: none;
+  position: absolute;
+  bottom: 100px;
+  width: 30px;
+  height: 20px;
 }
 
 /* title style 
@@ -63,6 +73,8 @@ body {
   width: 100%;
   transition: all 0.1s;
 }
+
+/* setting display none of input element  */
 input {
   display: none;
 }
@@ -113,10 +125,16 @@ label#upload-label {
   border: none;
   background-color: #14aae2;
   color: white;
-  width: 60%;
+  width: 80%;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+label#upload-label:hover {
+  opacity: 0.8;
 }
 /* label title styling */
-.file-head {
+#file-head {
   text-align: center;
   width: 100%;
   margin: 0 auto;
@@ -144,6 +162,7 @@ label#upload-label {
   background-color: #0095e4;
   cursor: pointer;
   transition: all 0.3s;
+  border: 7px solid #adddf6;
 }
 #Pink {
   width: 40px;
@@ -160,4 +179,71 @@ label#upload-label {
   background-color: #ffcc3c;
   cursor: pointer;
   transition: all 0.3s;
+}
+
+/* Media queries  */
+
+@media only screen and (max-width: 1024px) {
+  #container {
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 90%;
+  }
+  #file-head {
+    text-align: center;
+    width: 100%;
+    font-size: 1.2rem;
+    margin: 0 auto;
+  }
+  label#upload-label {
+    width: 100%;
+  }
+  #logo-upload-img {
+    display: none;
+    position: absolute;
+    bottom: 100px;
+    width: 30px;
+    height: 20px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .product-title {
+    font-size: 1.8rem;
+  }
+  .img-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #logo-upload-img {
+    display: none;
+    position: absolute;
+    bottom: 25px;
+    width: 30px;
+    height: 20px;
+  }
+  label#upload-label {
+    gap: 10px;
+  }
+  #file-head {
+    font-size: 0.95rem;
+  }
+
+  #Blue {
+    width: 30px;
+    height: 30px;
+    border: 7px solid #adddf6;
+  }
+  #Pink {
+    width: 30px;
+    height: 30px;
+  }
+  #Yellow {
+    width: 30px;
+    height: 30px;
+  }
 }
