@@ -93,7 +93,7 @@ logoImgEl.addEventListener("change", function (event) {
     setTimeout(() => {
       loaderStyle(false);
       let inputImage = document.querySelector("input[type=file]").files[0];
-      uploadTitleEl.innerText = inputImage.name.substring(0, 30);
+      uploadTitleEl.innerText = inputImage.name.substring(0, 25);
       logoUploadEl.src = URL.createObjectURL(event.target.files[0]);
       productImgEl.style.display = "block";
       uploadIconEl.style.display = "block";
