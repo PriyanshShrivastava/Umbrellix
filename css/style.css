@@ -1,0 +1,42 @@
+/* Imporint font from google fonts (Poppins ) */
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* Removing the highlighting color when tapped  */
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f7f7f7;
+}
+
+/* Main Container styling  */
+.container {
+  padding: 5rem;
+  border: none;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 60%;
+}
+
+.desc-container {
+  width: 100%;
+}
