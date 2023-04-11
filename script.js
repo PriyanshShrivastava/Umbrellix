@@ -4,6 +4,10 @@ const loaderEl = document.getElementById("loader");
 const uploadLoderEl = document.getElementById("upload-loader");
 const uploadIconEl = document.getElementById("upload-icon");
 const uploadLabelEl = document.getElementById("upload-label");
+const uploadTitleEl = document.getElementById("file-head");
+const logoImgEl = document.getElementById("logo-img");
+const logoUploadEl = document.getElementById("logo-upload-img");
+let color = "Blue";
 
 // grabbing color
 
@@ -24,6 +28,7 @@ const colorObj = {
 };
 
 function changeProductImage(val) {
+  color = val;
   clearTimeout(newTimeout);
   const spanId = document.querySelectorAll("span");
   for (let i = 0; i < spanId.length; i++) {
@@ -32,6 +37,7 @@ function changeProductImage(val) {
 
   productImgEl.style.display = "none";
   uploadIconEl.style.display = "none";
+  logoUploadEl.style.display = "none";
 
   loaderStyle(true, val);
 
@@ -48,7 +54,8 @@ function changeProductImage(val) {
     productImgEl.src = `./images/umbrella-images/${val}umbrella.png`;
     productImgEl.style.display = "block";
     uploadIconEl.style.display = "block";
-  }, 3000);
+    logoUploadEl.style.display = "inline-block";
+  }, 2500);
   containerEl.style.backgroundColor = `${colorObj[val]}`;
 
   //   document.getElementById("product-img").src = selectedColor + "-image.jpg";
@@ -65,3 +72,23 @@ function loaderStyle(val, col = "#fff") {
     uploadLoderEl.style.display = "none";
   }
 }
+
+// Upload Img Event
+
+logoImgEl.addEventListener("change", function (event) {
+  productImgEl.style.display = "none";
+  uploadIconEl.style.display = "none";
+  loaderStyle(true, color);
+  setTimeout(() => {
+    loaderStyle(false);
+    let inputImage = document.querySelector("input[type=file]").files[0];
+    uploadTitleEl.innerText = inputImage.name.substring(0, 30);
+    logoUploadEl.src = URL.createObjectURL(event.target.files[0]);
+    productImgEl.style.display = "block";
+    uploadIconEl.style.display = "block";
+    logoUploadEl.style.display = "inline-block";
+  }, 2500);
+  logoUploadEl.onload = function () {
+    URL.revokeObjectURL(logoUploadEl.src);
+  };
+});
